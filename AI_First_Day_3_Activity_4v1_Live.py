@@ -54,12 +54,12 @@ if "chat_session" not in st.session_state:
     st.session_state.chat_session = None #Placeholder for your chat session initialization
 
 if options == "Home":
-    st.Title("Title")
+    st.title("Title")
     st.write("Write Text")
 
 elif options == "About Us":
     #st.image("")
-    st.Title("About us")
+    st.title("About us")
 
 elif options == "Model":
     st.title("News Summarizer Tool")
