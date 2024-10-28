@@ -54,7 +54,7 @@ if "messages" not in st.session_state:
 if "chat_session" not in st.session_state:
     st.session_state.chat_session = None #Placeholder for your chat session initialization
 
-elif options == "Home":
+if options == "Home":
     st.Title("Title")
     st.write("Write Text")
 
