@@ -11,6 +11,7 @@ from langchain.vectorstores import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
 from openai.embeddings_utils import get_embedding
+import faiss
 import streamlit as st
 import warnings
 from streamlit_option_menu import option_menu
@@ -18,21 +19,21 @@ from streamlit_extras.mention import mention
 
 warnings.filterwarnings("ignore")
 
-st.set_page_config(page_title="News Summarizer Tool", page_icon="",layout="wide")
+st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
 
 with st.sidebar :
-    openai.api_key = st.text_input("Enter OpenAI API token:",type="password")
-    if not (open.api_key.startswith("sk-") and len(openai.api_key)==164):
-        st.warning("Please enter your OpenAI API token!", icon = "⚠️")
+    st.image('images/White_AI Republic.png')
+    openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
+    if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
+        st.warning('Please enter your OpenAI API token!', icon='⚠️')
     else:
-        st.success("Proceed to entering your prompt message!", icon="👉🏻")
-        
-with st.container() :
+        st.success('Proceed to entering your prompt message!', icon='👉')
+    with st.container() :
         l, m, r = st.columns((1, 3, 1))
         with l : st.empty()
         with m : st.empty()
         with r : st.empty()
-            
+
     options = option_menu(
         "Dashboard", 
         ["Home", "About Us", "Model"],
@@ -45,6 +46,7 @@ with st.container() :
             "nav-link-selected" : {"background-color" : "#262730"}          
         }
     )
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
