@@ -32,6 +32,7 @@ with st.container() :
         with l : st.empty()
         with m : st.empty()
         with r : st.empty()
+            
             options = option_menu(
                 "Dashboard", 
                 ["Home", "About Us", "Model"],
@@ -42,7 +43,8 @@ with st.container() :
                     "icon" : {"color" : "#dec960", "font-size" : "20px"},
                     "nav-link" : {"font-size" : "17px", "text-align" : "left", "margin" : "5px", "--hover-color" : "#262730"},
                     "nav-link-selected" : {"background-color" : "#262730"}          
-                })
+                }
+            )
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
