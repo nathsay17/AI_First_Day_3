@@ -22,18 +22,16 @@ warnings.filterwarnings("ignore")
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
 
 
-background_image_url = "images/background4.jpg"
 st.markdown(
-    f'''
+    f"""
     <style>
-        .stApp {{
-            background-image: url("images/background4.jpg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
+    .stApp {{
+        background-image: url('images/background4.jpg');
+        background-size: cover;
+        background-position: center;
+    }}
     </style>
-    ''',
+    """,
     unsafe_allow_html=True
 )
 
