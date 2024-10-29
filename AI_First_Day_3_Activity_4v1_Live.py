@@ -3,6 +3,7 @@ import openai
 import numpy as np
 import pandas as pd
 import json
+import base64
 from langchain.chat_models import ChatOpenAI
 from langchain.document_loaders import CSVLoader
 from langchain.embeddings import OpenAIEmbeddings
@@ -20,7 +21,40 @@ from streamlit_extras.mention import mention
 warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
-st.image('images/background5.jpg')
+
+#Background
+image_path = os.path.join(os.getcwd(), "images", "background5.jpg")
+<style>
+.stApp {
+    background-image: url('images/background5.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border: 5px solid red;
+}
+</style>
+def get_base64_image(image_path):
+    with open(image_path, "rb") as file:
+        encoded_image = base64.b64encode(file.read()).decode()
+    return encoded_image
+
+image_base64 = get_base64_image("images/background5.jpg")
+
+st.markdown(
+    f"""
+    <style>
+    .stApp {{
+        background-image: url("data:image/jpg;base64,{image_base64}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 
