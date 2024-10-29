@@ -21,6 +21,23 @@ warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
 
+
+background_image_url = "images/background4.jpg"
+st.markdown(
+    f'''
+    <style>
+        .stApp {{
+            background-image: url("images/background4.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+    </style>
+    ''',
+    unsafe_allow_html=True
+)
+
+
 with st.sidebar :
     st.image('images/White_AI Republic.png')
     openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
@@ -34,17 +51,18 @@ with st.sidebar :
         with m : st.empty()
         with r : st.empty()
 
-        options = option_menu(
-            "Dashboard", 
-            ["Home", "About Us", "Model"],
-            icons = ['book', 'globe', 'tools'],
-            menu_icon = "book", 
-            default_index = 0,
-            styles = {
-                "icon" : {"color" : "#dec960", "font-size" : "20px"},
-                "nav-link" : {"font-size" : "17px", "text-align" : "left", "margin" : "5px", "--hover-color" : "#262730"},
-                "nav-link-selected" : {"background-color" : "#262730"}          
-            })
+    options = option_menu(
+        "Dashboard", 
+        ["Home", "About Us", "Model"],
+        icons = ['book', 'globe', 'tools'],
+        menu_icon = "book", 
+        default_index = 0,
+        styles = {
+            "icon" : {"color" : "#dec960", "font-size" : "20px"},
+            "nav-link" : {"font-size" : "17px", "text-align" : "left", "margin" : "5px", "--hover-color" : "#262730"},
+            "nav-link-selected" : {"background-color" : "#262730"}          
+        }
+    )
 
 
 if "messages" not in st.session_state:
