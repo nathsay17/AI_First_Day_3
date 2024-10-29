@@ -20,7 +20,7 @@ from streamlit_extras.mention import mention
 warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
-
+st.image('images/background5')
 st.markdown(
     """
     <style>
