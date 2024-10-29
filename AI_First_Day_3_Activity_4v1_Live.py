@@ -30,6 +30,7 @@ st.markdown(
         background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
+        border: 5px solid red;
     }
     </style>
     """,
