@@ -21,21 +21,7 @@ warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
 st.image('images/background5')
-st.markdown(
-    """
-    <style>
-    .stApp {
-        background-image: url('images/background5.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        border: 5px solid red;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 
 with st.sidebar :
