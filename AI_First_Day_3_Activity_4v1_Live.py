@@ -41,7 +41,7 @@ def get_base64_image(image_path):
 image_base64 = get_base64_image("images/background5.jpg")
 
 st.markdown(
-    f"""
+    f'''
     <style>
     .stApp {{
         background-image: url("data:image/jpg;base64,{image_base64}");
@@ -51,7 +51,7 @@ st.markdown(
         background-attachment: fixed;
     }}
     </style>
-    """,
+    ''',
     unsafe_allow_html=True
 )
 
