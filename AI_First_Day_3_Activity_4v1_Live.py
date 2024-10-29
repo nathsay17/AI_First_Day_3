@@ -35,8 +35,8 @@ st.markdown(
     <style>
     .stApp {{
         background-image: url("data:image/jpg;base64,{image_base64}");
-        background-size: cover;  /* or 'contain', based on your preference */
-        background-position: left top;  /* Focus on the upper left corner */
+        background-size: contain;  /* Adjust to 'contain' */
+        background-position: left 50px top 50px;  /* Adjust these values for positioning */
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
