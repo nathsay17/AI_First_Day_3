@@ -31,7 +31,6 @@ image_path = os.path.join(os.getcwd(), "images", "background5.jpg")
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    border: 5px solid red;
 }
 </style>
 def get_base64_image(image_path):
