@@ -40,6 +40,15 @@ st.markdown(
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
+    .outlined-text {{
+        color: white;  /* Text color */
+        text-shadow: 
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;  /* Outline color */
+        font-size: 24px;  /* Adjust font size as needed */
+    }}
     </style>
     ''',
     unsafe_allow_html=True
@@ -81,8 +90,8 @@ if "chat_session" not in st.session_state:
     st.session_state.chat_session = None #Placeholder for your chat session initialization
 
 if options == "Home":
-    st.title("Title")
-    st.write("Write Text")
+    st.markdown('<h1 class="outlined-text">Title</h1>', unsafe_allow_html=True)
+    st.markdown('<h2 class="outlined-text">Write Text</h2>', unsafe_allow_html=True)
 
 elif options == "About Us":
     #st.image("")
