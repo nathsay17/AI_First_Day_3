@@ -28,15 +28,15 @@ def get_base64_image(image_path):
         encoded_image = base64.b64encode(file.read()).decode()
     return encoded_image
 
-image_base64 = get_base64_image("images/background5.png")
+image_base64 = get_base64_image("images/background3.jpg")
 
 st.markdown(
     f'''
     <style>
     .stApp {{
-        background-image: url("data:image/png;base64,{image_base64}");
+        background-image: url("data:image/jpg;base64,{image_base64}");
         background-size: contain;  /* Adjust to 'contain' */
-        background-position: right center;  /* Adjust these values for positioning */
+        background-position: center;  /* Adjust these values for positioning */
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
