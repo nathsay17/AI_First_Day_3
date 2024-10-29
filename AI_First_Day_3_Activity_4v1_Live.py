@@ -23,16 +23,6 @@ warnings.filterwarnings("ignore")
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
 
 #Background
-image_path = os.path.join(os.getcwd(), "images", "background5.jpg")
-<style>
-.stApp {
-    background-image: url('images/background5.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-</style>
 def get_base64_image(image_path):
     with open(image_path, "rb") as file:
         encoded_image = base64.b64encode(file.read()).decode()
