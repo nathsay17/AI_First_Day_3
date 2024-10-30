@@ -22,6 +22,9 @@ warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
 
+# Include Font Awesome
+st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">', unsafe_allow_html=True)
+
 #Background
 def get_base64_image(image_path):
     with open(image_path, "rb") as file:
@@ -73,7 +76,7 @@ with st.sidebar :
     options = option_menu(
         "Dashboard", 
         ["Home", "About Us", "Model"],
-        icons = ['book', 'question', 'tools'],
+        icons = ['skull-crossbones', 'question', 'tools'],
         menu_icon = "book", 
         default_index = 0,
         styles = {
