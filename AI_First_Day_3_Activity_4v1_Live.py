@@ -25,7 +25,7 @@ st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout=
 # Include Font Awesome
 st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">', unsafe_allow_html=True)
 
-#Background
+# Background
 def get_base64_image(image_path):
     with open(image_path, "rb") as file:
         encoded_image = base64.b64encode(file.read()).decode()
@@ -38,72 +38,68 @@ st.markdown(
     <style>
     .stApp {{
         background-image: url("data:image/jpg;base64,{image_base64}");
-        background-size: contain;  /* Adjust to 'contain' */
-        background-position: center;  /* Adjust these values for positioning */
+        background-size: contain;
+        background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
     .outlined-text {{
-        color: white;  /* Text color */
+        color: white;
         text-shadow: 
-            -1px -1px 0 #000,  
+            -1px -1px 0 #000,
             1px -1px 0 #000,
             -1px 1px 0 #000,
-            1px 1px 0 #000;  /* Outline color */
-        font-size: 24px;  /* Adjust font size as needed */
+            1px 1px 0 #000;
+        font-size: 24px;
     }}
     </style>
     ''',
     unsafe_allow_html=True
 )
 
-
-
-with st.sidebar :
+with st.sidebar:
     st.image('images/logo1.png')
     st.image('images/logo0.png')
     openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
-    if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
+    if not (openai.api_key.startswith('sk-') and len(openai.api_key) == 164):
         st.warning('Please enter your OpenAI API token!', icon='⚠️')
     else:
         st.success('Proceed to entering your prompt message!', icon='👉')
-    with st.container() :
+    with st.container():
         l, m, r = st.columns((1, 3, 1))
-        with l : st.empty()
-        with m : st.empty()
-        with r : st.empty()
+        with l: st.empty()
+        with m: st.empty()
+        with r: st.empty()
 
     options = option_menu(
-        "Dashboard", 
+        "Dashboard",
         ["Home", "About Us", "Model"],
-        icons = ['skull-crossbones', 'question', 'tools'],
-        menu_icon = "book", 
-        default_index = 0,
-        styles = {
-            "icon" : {"color" : "#dec960", "font-size" : "20px"},
-            "nav-link" : {"font-size" : "17px", "text-align" : "left", "margin" : "5px", "--hover-color" : "#262730"},
-            "nav-link-selected" : {"background-color" : "#262730"}          
+        icons=['skull-crossbones', 'info', 'book'],  # Use Font Awesome icon name
+        menu_icon="book",
+        default_index=0,
+        styles={
+            "icon": {"color": "#dec960", "font-size": "20px"},
+            "nav-link": {"font-size": "17px", "text-align": "left", "margin": "5px", "--hover-color": "#262730"},
+            "nav-link-selected": {"background-color": "#262730"}
         }
     )
-
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
 if "chat_session" not in st.session_state:
-    st.session_state.chat_session = None #Placeholder for your chat session initialization
+    st.session_state.chat_session = None  # Placeholder for your chat session initialization
 
 if options == "Home":
     st.markdown('<h1 class="outlined-text">Title</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="outlined-text">Write Text</h2>', unsafe_allow_html=True)
 
 elif options == "About Us":
-    #st.image("")
     st.title("About us")
 
 elif options == "Model":
     st.title("News Summarizer Tool")
-    col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1, 2, 1])
 
     with col2:
         News_Article = st.text_input("News Article", placeholder="News : ")
@@ -131,9 +127,9 @@ Edge Cases
 Simplify complex or technical terms to make the news accessible to a broad audience."""
 
                 user_message = News_Article
-                struct = [{'role' : 'system', 'content' : System_Prompt}]
+                struct = [{'role': 'system', 'content': System_Prompt}]
                 struct.append({"role": "user", "content": user_message})
-                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages=struct)
                 response = chat.choices[0].message.content
                 struct.append({"role": "assistant", "content": response})
                 st.success("Insight generated successfully")
