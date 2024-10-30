@@ -18,6 +18,7 @@ import warnings
 from streamlit_option_menu import option_menu
 from streamlit_extras.mention import mention
 from strings import home_string, about_string, System_Prompt
+from background import apply_background
 
 warnings.filterwarnings("ignore")
 
@@ -72,114 +73,25 @@ if "chat_session" not in st.session_state:
 
 
 if options == "Home":
+    st.markdown(apply_background(bg1), unsafe_allow_html=True)
     st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
     st.markdown(home_string, unsafe_allow_html=True)
-    st.markdown(
-        f'''
-        <style>
-        .stApp {{
-            background-image: url("data:image/jpg;base64,{bg1}");
-            background-size: contain;  /* Adjust to 'contain' */
-            background-position: center;  /* Adjust these values for positioning */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-        .outlined-text {{
-            color: white;  /* Text color */
-            text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;  /* Outline color */
-            font-size: 24px;  /* Adjust font size as needed */
-        }}
-        </style>
-        ''',
-        unsafe_allow_html=True
-    )
-
 
 elif options == "About":
+    st.markdown(apply_background(bg2), unsafe_allow_html=True)
     st.markdown('<h1 class="outlined-text"></h1>', unsafe_allow_html=True)
     st.markdown(about_string, unsafe_allow_html=True)
-    st.markdown(
-        f'''
-        <style>
-        .stApp {{
-            background-image: url("data:image/jpg;base64,{bg2}");
-            background-size: contain;  /* Adjust to 'contain' */
-            background-position: center;  /* Adjust these values for positioning */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-        .outlined-text {{
-            color: white;  /* Text color */
-            text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;  /* Outline color */
-            font-size: 24px;  /* Adjust font size as needed */
-        }}
-        </style>
-        ''',
-        unsafe_allow_html=True
-    )
 
 elif options == "Talk to Geralt":
-    #st.image("")
+    st.markdown(apply_background(bg3), unsafe_allow_html=True)
     st.markdown('<h1 class="outlined-text">Talk to Geralt</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="outlined-text">In this segment, you can talk to Geralt of Rivia (AI generated). You may ask anything related to the video game "The Witcher 3: Wild Hunt". </h2>', unsafe_allow_html=True)
-    st.markdown(
-        f'''
-        <style>
-        .stApp {{
-            background-image: url("data:image/jpg;base64,{bg3}");
-            background-size: contain;  /* Adjust to 'contain' */
-            background-position: center;  /* Adjust these values for positioning */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-        .outlined-text {{
-            color: white;  /* Text color */
-            text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;  /* Outline color */
-            font-size: 24px;  /* Adjust font size as needed */
-        }}
-        </style>
-        ''',
-        unsafe_allow_html=True
-    )
 
 elif options == "Model":
+    st.markdown(apply_background(bg4), unsafe_allow_html=True)
     st.title("News Summarizer Tool")
     col1, col2, col3 = st.columns([1,2,1])
-    st.markdown(
-        f'''
-        <style>
-        .stApp {{
-            background-image: url("data:image/jpg;base64,{bg4}");
-            background-size: contain;  /* Adjust to 'contain' */
-            background-position: center;  /* Adjust these values for positioning */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-        .outlined-text {{
-            color: white;  /* Text color */
-            text-shadow: 
-                -1px -1px 0 #000,  
-                1px -1px 0 #000,
-                -1px 1px 0 #000,
-                1px 1px 0 #000;  /* Outline color */
-            font-size: 24px;  /* Adjust font size as needed */
-        }}
-        </style>
-        ''',
-        unsafe_allow_html=True
-    )
+
 
     with col2:
         News_Article = st.text_input("News Article", placeholder="News : ")
