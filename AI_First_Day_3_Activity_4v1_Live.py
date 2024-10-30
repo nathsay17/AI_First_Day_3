@@ -17,7 +17,7 @@ import streamlit as st
 import warnings
 from streamlit_option_menu import option_menu
 from streamlit_extras.mention import mention
-from strings import Home_string
+from strings import home_string
 
 warnings.filterwarnings("ignore")
 
