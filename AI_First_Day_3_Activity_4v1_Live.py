@@ -86,19 +86,14 @@ elif options == "Talk to Geralt":
     st.markdown(apply_background(bg3), unsafe_allow_html=True)
     st.markdown('<h1 class="outlined-text">Talk to Geralt</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="outlined-text">In this segment, you can talk to Geralt of Rivia (AI generated). You may ask anything related to the video game "The Witcher 3: Wild Hunt". </h2>', unsafe_allow_html=True)
-
-elif options == "Model":
-    st.markdown(apply_background(bg4), unsafe_allow_html=True)
-    st.title("News Summarizer Tool")
     col1, col2, col3 = st.columns([1,2,1])
-
-
+    
     with col2:
-        News_Article = st.text_input("News Article", placeholder="News : ")
-        submit_button = st.button("Generate Summary")
-
+        News_Article = st.text_input("Witcher Wiki", placeholder="Query : ")
+        submit_button = st.button("Summon the summary")
+        
         if submit_button:
-            with st.spinner("Generating Summary"):
+            with st.spinner("Conjuring the Chronicle"):
                 
                 user_message = News_Article
                 struct = [{'role' : 'system', 'content' : System_Prompt}]
@@ -107,5 +102,13 @@ elif options == "Model":
                 response = chat.choices[0].message.content
                 struct.append({"role": "assistant", "content": response})
                 st.success("Insight generated successfully")
-                st.subheader("Summary:")
+                st.subheader("Response:")
                 st.write(response)
+
+elif options == "Model":
+    st.markdown(apply_background(bg4), unsafe_allow_html=True)
+    st.title("News Summarizer Tool")
+
+
+
+
