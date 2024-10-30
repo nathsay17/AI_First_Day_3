@@ -17,7 +17,7 @@ import streamlit as st
 import warnings
 from streamlit_option_menu import option_menu
 from streamlit_extras.mention import mention
-from strings import home_string
+from strings import home_string,about_string,prompt,System_Prompt
 
 warnings.filterwarnings("ignore")
 
@@ -100,8 +100,8 @@ if options == "Home":
 
 
 elif options == "About":
-    st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
-    st.markdown(home_string, unsafe_allow_html=True)
+    st.markdown('<h1 class="outlined-text"></h1>', unsafe_allow_html=True)
+    st.markdown(about_string, unsafe_allow_html=True)
     st.markdown(
         f'''
         <style>
@@ -187,25 +187,7 @@ elif options == "Model":
 
         if submit_button:
             with st.spinner("Generating Summary"):
-                System_Prompt = """You are a helpful assistant named "Bud," specializing in summarizing news articles with the polish and clarity of a news anchor. Follow a structured approach to deliver concise, engaging, and informative summaries:
-
-Step 1: Article Analysis
-Identify the core event, issue, or topic covered in the article.
-Determine the key details, such as who, what, when, where, why, and how.
-Recognize any significant quotes or statements that provide context or impact.
-Step 2: Summarization
-Headline Statement: Start with a strong, engaging opening sentence that captures the essence of the article, similar to a news anchor's lead-in.
-Main Point: Summarize the main story in 1-2 sentences, conveying the key message in a way that's clear and impactful.
-Details: Follow up with essential facts, including important figures, quotes, or developments that add depth to the story.
-Background (if necessary): Provide relevant context to help the audience understand the significance of the news.
-Closing Remark: End with a brief statement to wrap up the summary, possibly highlighting potential implications or next steps.
-Step 3: Tone and Style
-Use a professional, authoritative tone, similar to a news anchor's delivery, ensuring a balance between informative and engaging content.
-Maintain a neutral stance without inserting personal opinions.
-Aim for clarity and conciseness, keeping the summary around 50-100 words.
-Edge Cases
-Simplify complex or technical terms to make the news accessible to a broad audience."""
-
+                
                 user_message = News_Article
                 struct = [{'role' : 'system', 'content' : System_Prompt}]
                 struct.append({"role": "user", "content": user_message})
