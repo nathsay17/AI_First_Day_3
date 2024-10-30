@@ -29,7 +29,7 @@ def get_base64_image(image_path):
     return encoded_image
 
 bg1 = get_base64_image("images/background3.jpg")
-bg2 = get_base64_image("images/background1.jpg")
+bg2 = get_base64_image("images/background4.jpg")
 bg3 = get_base64_image("images/background2.jpg")
 bg4 = get_base64_image("images/background5.jpg")
 
@@ -76,7 +76,7 @@ if options == "Home":
         f'''
         <style>
         .stApp {{
-            background-image: url("data:image/jpg;base64,{bg2}");
+            background-image: url("data:image/jpg;base64,{bg1}");
             background-size: contain;  /* Adjust to 'contain' */
             background-position: center;  /* Adjust these values for positioning */
             background-repeat: no-repeat;
@@ -104,7 +104,7 @@ elif options == "Talk to Geralt":
         f'''
         <style>
         .stApp {{
-            background-image: url("data:image/jpg;base64,{bg4}");
+            background-image: url("data:image/jpg;base64,{bg2}");
             background-size: contain;  /* Adjust to 'contain' */
             background-position: center;  /* Adjust these values for positioning */
             background-repeat: no-repeat;
@@ -131,7 +131,7 @@ elif options == "Model":
         f'''
         <style>
         .stApp {{
-            background-image: url("data:image/jpg;base64,{bg4}");
+            background-image: url("data:image/jpg;base64,{bg3}");
             background-size: contain;  /* Adjust to 'contain' */
             background-position: center;  /* Adjust these values for positioning */
             background-repeat: no-repeat;
