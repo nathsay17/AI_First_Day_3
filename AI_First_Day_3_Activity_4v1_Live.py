@@ -22,7 +22,10 @@ warnings.filterwarnings("ignore")
 
 st.set_page_config(page_title="AI First Chatbot Template", page_icon="", layout="wide")
 
-#Background
+# Add Font Awesome CSS
+st.markdown('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">', unsafe_allow_html=True)
+
+# Background
 def get_base64_image(image_path):
     with open(image_path, "rb") as file:
         encoded_image = base64.b64encode(file.read()).decode()
@@ -35,52 +38,47 @@ st.markdown(
     <style>
     .stApp {{
         background-image: url("data:image/jpg;base64,{image_base64}");
-        background-size: contain;  /* Adjust to 'contain' */
-        background-position: center;  /* Adjust these values for positioning */
+        background-size: contain;
+        background-position: center;
         background-repeat: no-repeat;
         background-attachment: fixed;
     }}
     .outlined-text {{
-        color: white;  /* Text color */
+        color: white;
         text-shadow: 
-            -1px -1px 0 #000,  
+            -1px -1px 0 #000,
             1px -1px 0 #000,
             -1px 1px 0 #000,
-            1px 1px 0 #000;  /* Outline color */
-        font-size: 24px;  /* Adjust font size as needed */
+            1px 1px 0 #000;
+        font-size: 24px;
     }}
     </style>
     ''',
     unsafe_allow_html=True
 )
 
-
-
-with st.sidebar :
+with st.sidebar:
     st.image('images/logo1.png')
     st.image('images/logo0.png')
-    
+
     openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
-    if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
+    if not (openai.api_key.startswith('sk-') and len(openai.api_key) == 164):
         st.warning('Please enter your OpenAI API token!', icon='⚠️')
     else:
         st.success('Proceed to entering your prompt message!', icon='👉')
-    with st.container() :
-        l, m, r = st.columns((1, 3, 1))
-        with l : st.empty()
-        with m : st.empty()
-        with r : st.empty()
-
+    
     options = option_menu(
         "Dashboard", 
-        ["Home", "About Us", "Model"],
-        icons = ['book', 'globe', 'tools'],
-        menu_icon = "book", 
-        default_index = 0,
-        styles = {
-            "icon" : {"color" : "#dec960", "font-size" : "20px"},
-            "nav-link" : {"font-size" : "17px", "text-align" : "left", "margin" : "5px", "--hover-color" : "#262730"},
-            "nav-link-selected" : {"background-color" : "#262730"}          
+        ["<i class='fa-solid fa-skull-crossbones' style='color: #ff0000;'></i> Home", 
+         "About Us", 
+         "Model"],
+        icons=['', 'globe', 'tools'],  # Leave the first icon empty
+        menu_icon="book", 
+        default_index=0,
+        styles={
+            "icon": {"color": "#dec960", "font-size": "20px"},
+            "nav-link": {"font-size": "17px", "text-align": "left", "margin": "5px", "--hover-color": "#262730"},
+            "nav-link-selected": {"background-color": "#262730"}
         }
     )
     st.image('images/logo2.png')
