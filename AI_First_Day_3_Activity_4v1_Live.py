@@ -1,4 +1,4 @@
-import os
+nimport os
 import openai
 import numpy as np
 import pandas as pd
@@ -73,7 +73,7 @@ with st.sidebar :
     options = option_menu(
         "Dashboard", 
         ["Home", "About Us", "Model"],
-        icons = ['book', 'globe', 'tools'],
+        icons = ['book', 'question', 'tools'],
         menu_icon = "book", 
         default_index = 0,
         styles = {
