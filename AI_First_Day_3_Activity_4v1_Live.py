@@ -63,7 +63,7 @@ with st.sidebar :
             "nav-link-selected" : {"background-color" : "#262730"}          
         }
     )
-    st.image('images/logo2.png')
+    st.image('images/logo3.png')
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
