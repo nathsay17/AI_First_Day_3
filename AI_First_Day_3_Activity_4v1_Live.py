@@ -53,7 +53,7 @@ with st.sidebar :
     options = option_menu(
         "Dashboard", 
         ["Home", "Talk to Geralt", "Model"],
-        icons = ['book', 'globe', 'tools'],
+        icons = ['book', 'play', 'tools'],
         menu_icon = "book", 
         default_index = 0,
         styles = {
