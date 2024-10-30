@@ -32,30 +32,6 @@ bg1 = get_base64_image("images/background3.jpg")
 bg2 = get_base64_image("images/background1.jpg")
 bg3 = get_base64_image("images/background2.jpg")
 bg4 = get_base64_image("images/background5.jpg")
-st.markdown(
-    f'''
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{bg1}");
-        background-size: contain;  /* Adjust to 'contain' */
-        background-position: center;  /* Adjust these values for positioning */
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-    .outlined-text {{
-        color: white;  /* Text color */
-        text-shadow: 
-            -1px -1px 0 #000,  
-            1px -1px 0 #000,
-            -1px 1px 0 #000,
-            1px 1px 0 #000;  /* Outline color */
-        font-size: 24px;  /* Adjust font size as needed */
-    }}
-    </style>
-    ''',
-    unsafe_allow_html=True
-)
-
 
 
 with st.sidebar :
