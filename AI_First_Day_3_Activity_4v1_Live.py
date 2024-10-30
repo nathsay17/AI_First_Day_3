@@ -28,13 +28,15 @@ def get_base64_image(image_path):
         encoded_image = base64.b64encode(file.read()).decode()
     return encoded_image
 
-image_base64 = get_base64_image("images/background3.jpg")
-
+bg1 = get_base64_image("images/background3.jpg")
+bg2 = get_base64_image("images/background1.jpg")
+bg3 = get_base64_image("images/background2.jpg")
+bg4 = get_base64_image("images/background5.jpg")
 st.markdown(
     f'''
     <style>
     .stApp {{
-        background-image: url("data:image/jpg;base64,{image_base64}");
+        background-image: url("data:image/jpg;base64,{bg1}");
         background-size: contain;  /* Adjust to 'contain' */
         background-position: center;  /* Adjust these values for positioning */
         background-repeat: no-repeat;
@@ -94,14 +96,83 @@ if "chat_session" not in st.session_state:
 if options == "Home":
     st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="outlined-text">Write Text</h2>', unsafe_allow_html=True)
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg2}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
 
 elif options == "About Us":
     #st.image("")
     st.title("About us")
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg3}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
 
 elif options == "Model":
     st.title("News Summarizer Tool")
     col1, col2, col3 = st.columns([1,2,1])
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg4}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
 
     with col2:
         News_Article = st.text_input("News Article", placeholder="News : ")
