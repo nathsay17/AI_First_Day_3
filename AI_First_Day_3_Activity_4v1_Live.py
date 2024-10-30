@@ -75,7 +75,7 @@ with st.sidebar :
 
     options = option_menu(
         "Dashboard", 
-        ["Home", "About Us", "Model"],
+        ["Home", "Talk to Geralt", "Model"],
         icons = ['book', 'globe', 'tools'],
         menu_icon = "book", 
         default_index = 0,
@@ -120,14 +120,15 @@ if options == "Home":
         unsafe_allow_html=True
     )
 
-elif options == "About Us":
+elif options == "Talk to Geralt":
     #st.image("")
-    st.title("About us")
+    st.markdown('<h1 class="outlined-text">Talk to Geralt</h1>', unsafe_allow_html=True)
+    st.markdown('<h2 class="outlined-text">In this segment, you can talk to Geralt of Rivia (AI generated). You may ask anything related to the video game "The Witcher 3: Wild Hunt". </h2>', unsafe_allow_html=True)
     st.markdown(
         f'''
         <style>
         .stApp {{
-            background-image: url("data:image/jpg;base64,{bg3}");
+            background-image: url("data:image/jpg;base64,{bg4}");
             background-size: contain;  /* Adjust to 'contain' */
             background-position: center;  /* Adjust these values for positioning */
             background-repeat: no-repeat;
