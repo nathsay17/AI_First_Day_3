@@ -17,7 +17,7 @@ import streamlit as st
 import warnings
 from streamlit_option_menu import option_menu
 from streamlit_extras.mention import mention
-from strings import home_string,about_string,prompt,System_Prompt
+from strings import home_string, about_string, System_Prompt
 
 warnings.filterwarnings("ignore")
 
