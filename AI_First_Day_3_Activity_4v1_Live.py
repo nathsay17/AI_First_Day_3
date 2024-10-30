@@ -17,6 +17,7 @@ import streamlit as st
 import warnings
 from streamlit_option_menu import option_menu
 from streamlit_extras.mention import mention
+from strings import Home_string
 
 warnings.filterwarnings("ignore")
 
@@ -71,7 +72,7 @@ if "chat_session" not in st.session_state:
 
 if options == "Home":
     st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
-    st.markdown('<h2 class="outlined-text">Write Text</h2>', unsafe_allow_html=True)
+    st.markdown(home_string, unsafe_allow_html=True)
     st.markdown(
         f'''
         <style>
