@@ -57,7 +57,9 @@ st.markdown(
 
 
 with st.sidebar :
-    st.image('images/White_AI Republic.png')
+    st.image('images/logo1.png')
+    st.image('images/logo0.png')
+    
     openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
     if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
         st.warning('Please enter your OpenAI API token!', icon='⚠️')
@@ -81,7 +83,7 @@ with st.sidebar :
             "nav-link-selected" : {"background-color" : "#262730"}          
         }
     )
-
+    st.image('images/logo2.png')
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -90,7 +92,7 @@ if "chat_session" not in st.session_state:
     st.session_state.chat_session = None #Placeholder for your chat session initialization
 
 if options == "Home":
-    st.markdown('<h1 class="outlined-text">Title</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="outlined-text">Write Text</h2>', unsafe_allow_html=True)
 
 elif options == "About Us":
