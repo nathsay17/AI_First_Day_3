@@ -17,6 +17,7 @@ import streamlit as st
 import warnings
 from streamlit_option_menu import option_menu
 from streamlit_extras.mention import mention
+from strings import home_string, about_string, System_Prompt
 
 warnings.filterwarnings("ignore")
 
@@ -28,32 +29,10 @@ def get_base64_image(image_path):
         encoded_image = base64.b64encode(file.read()).decode()
     return encoded_image
 
-image_base64 = get_base64_image("images/background3.jpg")
-
-st.markdown(
-    f'''
-    <style>
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{image_base64}");
-        background-size: contain;  /* Adjust to 'contain' */
-        background-position: center;  /* Adjust these values for positioning */
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-    .outlined-text {{
-        color: white;  /* Text color */
-        text-shadow: 
-            -1px -1px 0 #000,  
-            1px -1px 0 #000,
-            -1px 1px 0 #000,
-            1px 1px 0 #000;  /* Outline color */
-        font-size: 24px;  /* Adjust font size as needed */
-    }}
-    </style>
-    ''',
-    unsafe_allow_html=True
-)
-
+bg1 = get_base64_image("images/background1.jpg")
+bg2 = get_base64_image("images/background2.jpg")
+bg3 = get_base64_image("images/background4.jpg")
+bg4 = get_base64_image("images/background5.jpg")
 
 
 with st.sidebar :
@@ -73,8 +52,8 @@ with st.sidebar :
 
     options = option_menu(
         "Dashboard", 
-        ["Home", "About Us", "Model"],
-        icons = ['book', 'globe', 'tools'],
+        ["Home", "About", "Talk to Geralt", "Model"],
+        icons = ['book', 'globe', 'play', 'tools'],
         menu_icon = "book", 
         default_index = 0,
         styles = {
@@ -91,17 +70,116 @@ if "messages" not in st.session_state:
 if "chat_session" not in st.session_state:
     st.session_state.chat_session = None #Placeholder for your chat session initialization
 
+
 if options == "Home":
     st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
-    st.markdown('<h2 class="outlined-text">Write Text</h2>', unsafe_allow_html=True)
+    st.markdown(home_string, unsafe_allow_html=True)
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg1}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
 
-elif options == "About Us":
+
+elif options == "About":
+    st.markdown('<h1 class="outlined-text"></h1>', unsafe_allow_html=True)
+    st.markdown(about_string, unsafe_allow_html=True)
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg2}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
+
+elif options == "Talk to Geralt":
     #st.image("")
-    st.title("About us")
+    st.markdown('<h1 class="outlined-text">Talk to Geralt</h1>', unsafe_allow_html=True)
+    st.markdown('<h2 class="outlined-text">In this segment, you can talk to Geralt of Rivia (AI generated). You may ask anything related to the video game "The Witcher 3: Wild Hunt". </h2>', unsafe_allow_html=True)
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg3}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
 
 elif options == "Model":
     st.title("News Summarizer Tool")
     col1, col2, col3 = st.columns([1,2,1])
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg4}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
 
     with col2:
         News_Article = st.text_input("News Article", placeholder="News : ")
@@ -109,25 +187,7 @@ elif options == "Model":
 
         if submit_button:
             with st.spinner("Generating Summary"):
-                System_Prompt = """You are a helpful assistant named "Bud," specializing in summarizing news articles with the polish and clarity of a news anchor. Follow a structured approach to deliver concise, engaging, and informative summaries:
-
-Step 1: Article Analysis
-Identify the core event, issue, or topic covered in the article.
-Determine the key details, such as who, what, when, where, why, and how.
-Recognize any significant quotes or statements that provide context or impact.
-Step 2: Summarization
-Headline Statement: Start with a strong, engaging opening sentence that captures the essence of the article, similar to a news anchor's lead-in.
-Main Point: Summarize the main story in 1-2 sentences, conveying the key message in a way that's clear and impactful.
-Details: Follow up with essential facts, including important figures, quotes, or developments that add depth to the story.
-Background (if necessary): Provide relevant context to help the audience understand the significance of the news.
-Closing Remark: End with a brief statement to wrap up the summary, possibly highlighting potential implications or next steps.
-Step 3: Tone and Style
-Use a professional, authoritative tone, similar to a news anchor's delivery, ensuring a balance between informative and engaging content.
-Maintain a neutral stance without inserting personal opinions.
-Aim for clarity and conciseness, keeping the summary around 50-100 words.
-Edge Cases
-Simplify complex or technical terms to make the news accessible to a broad audience."""
-
+                
                 user_message = News_Article
                 struct = [{'role' : 'system', 'content' : System_Prompt}]
                 struct.append({"role": "user", "content": user_message})
