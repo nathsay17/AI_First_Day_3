@@ -1,4 +1,4 @@
-nimport os
+import os
 import openai
 import numpy as np
 import pandas as pd
