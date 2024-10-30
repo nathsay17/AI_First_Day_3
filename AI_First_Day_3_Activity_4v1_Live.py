@@ -66,12 +66,11 @@ with st.sidebar:
         st.warning('Please enter your OpenAI API token!', icon='⚠️')
     else:
         st.success('Proceed to entering your prompt message!', icon='👉')
-    
+
+    # Use the option_menu for plain text, and render the icon separately
     options = option_menu(
         "Dashboard", 
-        ["<i class='fa-solid fa-skull-crossbones' style='color: #ff0000;'></i> Home", 
-         "About Us", 
-         "Model"],
+        ["Home", "About Us", "Model"],
         icons=['', 'globe', 'tools'],  # Leave the first icon empty
         menu_icon="book", 
         default_index=0,
@@ -81,6 +80,12 @@ with st.sidebar:
             "nav-link-selected": {"background-color": "#262730"}
         }
     )
+    
+    # Render the skull-crossbones icon as a separate markdown element
+    if options == "Home":
+        st.markdown("<h4><i class='fa-solid fa-skull-crossbones' style='color: #ff0000;'></i> Home</h4>", unsafe_allow_html=True)
+    else:
+        st.markdown("<h4>{}</h4>".format(options), unsafe_allow_html=True)
     st.image('images/logo2.png')
 
 if "messages" not in st.session_state:
