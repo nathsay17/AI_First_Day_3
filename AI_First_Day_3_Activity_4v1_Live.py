@@ -52,8 +52,8 @@ with st.sidebar :
 
     options = option_menu(
         "Dashboard", 
-        ["Home", "Talk to Geralt", "Model"],
-        icons = ['book', 'play', 'tools'],
+        ["Home", "About", "Talk to Geralt", "Model"],
+        icons = ['book', 'globe', 'play', 'tools'],
         menu_icon = "book", 
         default_index = 0,
         styles = {
@@ -70,7 +70,36 @@ if "messages" not in st.session_state:
 if "chat_session" not in st.session_state:
     st.session_state.chat_session = None #Placeholder for your chat session initialization
 
+
 if options == "Home":
+    st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
+    st.markdown(home_string, unsafe_allow_html=True)
+    st.markdown(
+        f'''
+        <style>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{bg1}");
+            background-size: contain;  /* Adjust to 'contain' */
+            background-position: center;  /* Adjust these values for positioning */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        .outlined-text {{
+            color: white;  /* Text color */
+            text-shadow: 
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;  /* Outline color */
+            font-size: 24px;  /* Adjust font size as needed */
+        }}
+        </style>
+        ''',
+        unsafe_allow_html=True
+    )
+
+
+elif options == "About":
     st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
     st.markdown(home_string, unsafe_allow_html=True)
     st.markdown(
