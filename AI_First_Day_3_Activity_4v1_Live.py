@@ -92,7 +92,7 @@ if "chat_session" not in st.session_state:
     st.session_state.chat_session = None #Placeholder for your chat session initialization
 
 if options == "Home":
-    st.markdown('<h1 class="outlined-text">Title</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="outlined-text">Write Text</h2>', unsafe_allow_html=True)
 
 elif options == "About Us":
