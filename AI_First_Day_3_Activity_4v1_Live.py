@@ -71,17 +71,13 @@ with st.sidebar:
         with m: st.empty()
         with r: st.empty()
 
-    options = option_menu(
+    # Create custom option menu with Font Awesome icons
+    options = st.radio(
         "Dashboard",
         ["Home", "About Us", "Model"],
-        icons=['skull-crossbones', 'info', 'book'],  # Use Font Awesome icon name
-        menu_icon="book",
-        default_index=0,
-        styles={
-            "icon": {"color": "#dec960", "font-size": "20px"},
-            "nav-link": {"font-size": "17px", "text-align": "left", "margin": "5px", "--hover-color": "#262730"},
-            "nav-link-selected": {"background-color": "#262730"}
-        }
+        index=0,
+        format_func=lambda x: f'<i class="fa-solid fa-skull-crossbones" style="color: #ff0000;"></i> {x}' if x == "Home" else x,
+        unsafe_allow_html=True
     )
 
 if "messages" not in st.session_state:
