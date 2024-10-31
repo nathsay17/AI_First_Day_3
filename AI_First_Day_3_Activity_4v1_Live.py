@@ -54,7 +54,7 @@ with st.sidebar :
     options = option_menu(
         "Table of Knowledge", 
         ["Home", "About", "Talk to Geralt", "Bestiary"],
-        icons = ['heart', 'cog', 'play', 'clipboard'],
+        icons = ['heart', 'chat', 'play', 'clipboard'],
         menu_icon = "book", 
         default_index = 0,
         styles = {
