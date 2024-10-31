@@ -69,3 +69,9 @@ If a query on the game characters are made, list down in a table the name of the
 
 please outline the text to make if readable to the user/player
 """
+
+
+Bestiary_Prompt = """Create a Bestiary of the creatures in the video game 'The Witcher 3: Wild Hunt'""" Include ALL of the beasts, creatures, and monsters that can be found in the video game and classify them accordingly.
+The website: https://witcher.fandom.com/wiki/The_Witcher_3_bestiary migh help with the classification. Please include details of each beast/creature/monster including but not limited to their weakenss and preparations 
+a player must make before engaging in battle with them
+"""
