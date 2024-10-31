@@ -1,12 +1,12 @@
 home_string = """
     <h2 class="outlined-text">Witcher 3: Wild Hunt Companion Page!</h2>
-    <p>This webpage serves as your ultimate guide to the captivating world of <strong>Witcher 3: Wild Hunt</strong>. Here, you can delve deep into the game's lore, mechanics, and fascinating characters.</p>
+    <p class="outlined-text">This webpage serves as your ultimate guide to the captivating world of <strong>Witcher 3: Wild Hunt</strong>. Here, you can delve deep into the game's lore, mechanics, and fascinating characters.</p>
     <ul>
-        <li><strong>About</strong>: In the "About" section, you will find an introduction to the enchanting universe of <strong>Witcher 3</strong>. Learn about its rich narrative, the compelling journey of Geralt of Rivia, and the intricate world that awaits you.</li>
-        <li><strong>Talk to Geralt</strong>: Have questions about the game? Use the "Talk to Geralt" option to engage with our virtual assistant. Whether you seek advice on quests, character insights, or game mechanics, Geralt is here to help!</li>
-        <li><strong>Beastiary</strong>: Explore the diverse array of creatures that roam the lands of <strong>Witcher 3</strong> in our Beastiary. Learn about the various beasts you’ll encounter, their traits, weaknesses, and the strategies to defeat them.</li>
+        <li class="outlined-text"><strong>About</strong>: In the "About" section, you will find an introduction to the enchanting universe of <strong>Witcher 3</strong>. Learn about its rich narrative, the compelling journey of Geralt of Rivia, and the intricate world that awaits you.</li>
+        <li class="outlined-text"><strong>Talk to Geralt</strong>: Have questions about the game? Use the "Talk to Geralt" option to engage with our virtual assistant. Whether you seek advice on quests, character insights, or game mechanics, Geralt is here to help!</li>
+        <li class="outlined-text"><strong>Beastiary</strong>: Explore the diverse array of creatures that roam the lands of <strong>Witcher 3</strong> in our Beastiary. Learn about the various beasts you’ll encounter, their traits, weaknesses, and the strategies to defeat them.</li>
     </ul>
-    <p>Join us as we journey through the realms of <strong>Witcher 3: Wild Hunt</strong>. Whether you're a seasoned player or a newcomer, this webpage is designed to enhance your experience and deepen your understanding of this iconic game!</p>
+    <p class="outlined-text">Join us as we journey through the realms of <strong>Witcher 3: Wild Hunt</strong>. Whether you're a seasoned player or a newcomer, this webpage is designed to enhance your experience and deepen your understanding of this iconic game!</p>
 """
 
 
