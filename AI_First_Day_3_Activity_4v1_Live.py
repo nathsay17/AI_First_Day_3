@@ -52,7 +52,7 @@ with st.sidebar :
         with r : st.empty()
 
     options = option_menu(
-        "Table of Knowledge", 
+        "Table of    Knowledge", 
         ["Home", "About", "Talk to Geralt", "Bestiary"],
         icons = ['heart', 'chat', 'play', 'clipboard'],
         menu_icon = "book", 
