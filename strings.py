@@ -5,10 +5,8 @@ home_string = """
     <p class="outlined-text">As you traverse the vast landscapes of the Northern Kingdoms, you will uncover hidden treasures, engage in fierce battles, and forge powerful alliances. Whether you are a seasoned monster hunter or a curious newcomer, our comprehensive resources are designed to enhance your journey and provide insights that will aid you in your quests.</p>
     
     <ul>
-        <li class="outlined-text"><strong>About</strong>: In the "About" section, discover the enchanting universe of <strong>Witcher 3</strong>. Learn about its rich narrative that interweaves themes of destiny, love, and sacrifice, alongside the compelling journey of Geralt of Rivia—a seasoned Witcher navigating a world fraught with peril. Uncover the intricate world filled with political intrigue, mythical creatures, and moral dilemmas that will challenge your choices at every turn.</li>
-        
+        <li class="outlined-text"><strong>About</strong>: In the "About" section, discover the enchanting universe of <strong>Witcher 3</strong>. Learn about its rich narrative that interweaves themes of destiny, love, and sacrifice, alongside the compelling journey of Geralt of Rivia—a seasoned Witcher navigating a world fraught with peril. Uncover the intricate world filled with political intrigue, mythical creatures, and moral dilemmas that will challenge your choices at every turn.</li>   
         <li class="outlined-text"><strong>Talk to Geralt</strong>: Have questions about the game? Use the "Talk to Geralt" option to engage with our virtual assistant, who embodies the wit and wisdom of Geralt himself. Whether you seek advice on completing quests, character insights, or game mechanics, Geralt is here to guide you through the challenges you may face on your journey!</li>
-        
         <li class="outlined-text"><strong>Beastiary</strong>: Venture into the Beastiary, where you can explore the diverse array of creatures that roam the lands of <strong>Witcher 3</strong>. Learn about the various beasts you’ll encounter, their traits, weaknesses, and the strategies you need to defeat them. From cunning wolves to fearsome dragons, understanding these foes is essential for survival in this dangerous world.</li>
     </ul>
     
@@ -19,7 +17,7 @@ home_string = """
 about_string = """
 <h1 class="outlined-text">Introduction to The Witcher 3: Wild Hunt</h1>
 <p class="outlined-text">
-*The Witcher 3: Wild Hunt* is an epic action role-playing game developed by CD Projekt Red, based on the book series by Andrzej Sapkowski. Released in May 2015, this critically acclaimed title has set a benchmark for open-world RPGs.
+The Witcher 3: Wild Hunt is an epic action role-playing game developed by CD Projekt Red, based on the book series by Andrzej Sapkowski. Released in May 2015, this critically acclaimed title has set a benchmark for open-world RPGs.
 </p>
 <h3 class="outlined-text">Plot</h3>
 <p class="outlined-text">
@@ -35,7 +33,7 @@ Set in a richly detailed fantasy universe, *The Witcher 3* follows the story of 
 </ul>
 <h3 class="outlined-text">What Makes the Game Special</h3>
 <p class="outlined-text">
-*The Witcher 3* stands out for its expansive open world, captivating storytelling, and rich character development. Players can explore a vast, detailed landscape filled with diverse environments, from bustling cities to dense forests. The game features engaging side quests, often with their own unique stories and outcomes, ensuring that players are continuously immersed in the world.
+The Witcher 3 stands out for its expansive open world, captivating storytelling, and rich character development. Players can explore a vast, detailed landscape filled with diverse environments, from bustling cities to dense forests. The game features engaging side quests, often with their own unique stories and outcomes, ensuring that players are continuously immersed in the world.
 </p>
 <p class="outlined-text">
 The game’s design is celebrated for its intricate attention to detail, allowing players to interact with the environment in meaningful ways. Additionally, the game includes a robust crafting and alchemy system, alongside deep combat mechanics that provide a rewarding gameplay experience.
@@ -48,7 +46,7 @@ The game’s design is celebrated for its intricate attention to detail, allowin
     <li><strong>Content</strong>: With two major expansions—Hearts of Stone and Blood and Wine—the game offers hundreds of hours of gameplay and additional content.</li>
 </ul>
 <p class="outlined-text">
-*The Witcher 3: Wild Hunt* is not just a game; it's an unforgettable journey through a richly crafted world filled with engaging stories, memorable characters, and endless exploration.
+The Witcher 3: Wild Hunt is not just a game; it's an unforgettable journey through a richly crafted world filled with engaging stories, memorable characters, and endless exploration.
 </p>
 """
 
