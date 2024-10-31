@@ -90,10 +90,10 @@ elif options == "Talk to Geralt":
     
     with col2:
         News_Article = st.text_input("Witcher Wiki", placeholder="Query : ")
-        submit_button = st.button("<span class='outlined-text'>Summon the Query</span>")
+        submit_button = st.button("Summon the Query")
         
         if submit_button:
-            with st.spinner("<span class='outlined-text'>Conjuring the Chronicle...</span>"):
+            with st.spinner("<span class='outlined-text'>Conjuring the Chronicle...</span>", unsafe_allow_html=True):
                 
                 user_message = News_Article
                 struct = [{'role' : 'system', 'content' : System_Prompt}]
