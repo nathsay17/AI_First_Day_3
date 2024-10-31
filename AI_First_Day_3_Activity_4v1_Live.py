@@ -93,12 +93,12 @@ elif options == "Talk to Geralt":
         submit_button = st.button("Summon the Query")
         
         if submit_button:
-            with st.spinner("<span class='outlined-text'>Conjuring the Chronicle...</span>", unsafe_allow_html=True):
-                
+            st.markdown("<span class='outlined-text'>Conjuring the Chronicle...</span>", unsafe_allow_html=True)
+            with st.spinner("Processing..."):  # Simple text here for the spinner
                 user_message = News_Article
-                struct = [{'role' : 'system', 'content' : System_Prompt}]
+                struct = [{'role': 'system', 'content': System_Prompt}]
                 struct.append({"role": "user", "content": user_message})
-                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages=struct)
                 response = chat.choices[0].message.content
                 struct.append({"role": "assistant", "content": response})
                 st.success("Insight generated successfully")
