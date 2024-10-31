@@ -74,7 +74,6 @@ if "chat_session" not in st.session_state:
 
 if options == "Home":
     st.markdown(apply_background(bg1), unsafe_allow_html=True)
-    st.markdown('<h1 class="outlined-text">Welcome to the world of Witcher 3!</h1>', unsafe_allow_html=True)
     st.markdown(home_string, unsafe_allow_html=True)
 
 elif options == "About":
