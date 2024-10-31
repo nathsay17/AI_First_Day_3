@@ -93,23 +93,17 @@ elif options == "Talk to Geralt":
         submit_button = st.button("Summon the Query")
         
         if submit_button:
-            # Display the styled message temporarily
-            st.markdown("<span class='outlined-text'>Conjuring the Chronicle...</span>", unsafe_allow_html=True)
-            
-            with st.spinner("Processing..."):  # Simple text here for the spinner
+            with st.spinner("Conjuring the Chronicle"):
+                
                 user_message = News_Article
-                struct = [{'role': 'system', 'content': System_Prompt}]
+                struct = [{'role' : 'system', 'content' : System_Prompt}]
                 struct.append({"role": "user", "content": user_message})
-                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages=struct)
+                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
                 response = chat.choices[0].message.content
                 struct.append({"role": "assistant", "content": response})
-    
-            # Clear the styled message after processing
-            st.empty()  # This will remove the previous message
-            
-            st.success("Insight generated successfully")
-            st.subheader("Response:")
-            st.write(response)
+                st.success("Insight generated successfully")
+                st.subheader("Response:")
+                st.write(response)
 
 elif options == "Model":
     st.markdown(apply_background(bg4), unsafe_allow_html=True)
