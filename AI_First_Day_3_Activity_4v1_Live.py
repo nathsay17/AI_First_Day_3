@@ -108,12 +108,10 @@ elif options == "Bestiary":
     st.markdown(apply_background(bg4), unsafe_allow_html=True)
     st.title("Bestiary")
 
-                struct = [{'role' : 'system', 'content' : Bestiary_Prompt}]
-                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
-                response = chat.choices[0].message.content
-                struct.append({"role": "assistant", "content": response})
-                st.success("Insight generated successfully")
-                st.subheader("Response:")
-                st.write(response)
+    struct = [{'role' : 'system', 'content' : Bestiary_Prompt}]
+    chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+    response = chat.choices[0].message.content
+    struct.append({"role": "assistant", "content": response})
+    st.write(response)
 
 
