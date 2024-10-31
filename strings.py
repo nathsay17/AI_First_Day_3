@@ -7,8 +7,8 @@ home_string = """
         <li><strong>Beastiary</strong>: Explore the diverse array of creatures that roam the lands of <strong>Witcher 3</strong> in our Beastiary. Learn about the various beasts you’ll encounter, their traits, weaknesses, and the strategies to defeat them.</li>
     </ul>
     <p>Join us as we journey through the realms of <strong>Witcher 3: Wild Hunt</strong>. Whether you're a seasoned player or a newcomer, this webpage is designed to enhance your experience and deepen your understanding of this iconic game!</p>
-
 """
+
 
 about_string = """
 <h1 class="outlined-text">Introduction to The Witcher 3: Wild Hunt</h1>
