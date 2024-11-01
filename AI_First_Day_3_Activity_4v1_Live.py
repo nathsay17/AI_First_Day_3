@@ -88,21 +88,17 @@ elif options == "Talk to Geralt":
     col1, col2, col3 = st.columns([1,2,1])
     
     with col2:
-        News_Article = st.text_input("Witcher Wiki", placeholder="Query : ")
-        submit_button = st.button("Summon the Query")
-        
-        if submit_button:
-            with st.spinner("Conjuring the Chronicle"):
-                
-                user_message = News_Article
-                struct = [{'role' : 'system', 'content' : System_Prompt}]
-                struct.append({"role": "user", "content": user_message})
-                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
-                response = chat.choices[0].message.content
-                struct.append({"role": "assistant", "content": response})
-                st.success("Insight generated successfully")
-                st.subheader("Response:")
-                st.write(response)
+        struct = [{'role' : 'system', 'content' : System_Prompt}]
+        while True :
+           user_message = input();
+           print("User : " + user_message)
+           struct.append({"role": "user", "content": user_message})
+           chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+           response = chat.choices[0].message.content
+           print("Assistant : " + response)
+           struct.append({"role": "assistant", "content": response})
+
+
 
 elif options == "Bestiary":
     st.markdown(apply_background(bg4), unsafe_allow_html=True)
