@@ -17,7 +17,7 @@ import streamlit as st
 import warnings
 from streamlit_option_menu import option_menu
 from streamlit_extras.mention import mention
-from strings import home_string, about_string, System_Prompt
+from strings import home_string, about_string, System_Prompt, Bestiary_Prompt
 from background import apply_background
 
 warnings.filterwarnings("ignore")
@@ -52,9 +52,9 @@ with st.sidebar :
         with r : st.empty()
 
     options = option_menu(
-        "Dashboard", 
-        ["Home", "About", "Talk to Geralt", "Model"],
-        icons = ['book', 'globe', 'play', 'tools'],
+        "Table of Knowledge", 
+        ["Home", "About", "Talk to Geralt", "Bestiary"],
+        icons = ['heart', 'chat', 'play', 'clipboard'],
         menu_icon = "book", 
         default_index = 0,
         styles = {
@@ -104,6 +104,12 @@ elif options == "Talk to Geralt":
                 st.subheader("Response:")
                 st.write(response)
 
-elif options == "Model":
+elif options == "Bestiary":
     st.markdown(apply_background(bg4), unsafe_allow_html=True)
-    st.title("News Summarizer Tool")
+    st.title("Bestiary")
+
+    struct = [{'role' : 'system', 'content' : Bestiary_Prompt}]
+    chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+    response = chat.choices[0].message.content
+    struct.append({"role": "assistant", "content": response})
+    st.write(response)
