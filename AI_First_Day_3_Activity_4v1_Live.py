@@ -85,20 +85,24 @@ elif options == "Talk to Geralt":
     st.markdown(apply_background(bg3), unsafe_allow_html=True)
     st.markdown('<h1 class="outlined-text">Talk to Geralt</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="outlined-text">In this segment, you can talk to Geralt of Rivia (AI generated). You may ask anything related to the video game "The Witcher 3: Wild Hunt". </h2>', unsafe_allow_html=True)
-    col1, col2, col3 = st.columns([1,2,1])
+    col1, col2, col3 = st.columns([1,3,1])
     
     with col2:
-        struct = [{'role' : 'system', 'content' : System_Prompt}]
-        while True :
-           user_message = input();
-           print("User : " + user_message)
-           struct.append({"role": "user", "content": user_message})
-           chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
-           response = chat.choices[0].message.content
-           print("Assistant : " + response)
-           struct.append({"role": "assistant", "content": response})
-
-
+        user_query = st.text_input("Witcher Wiki", placeholder="Query : ")
+        submit_button = st.button("Summon the Query")
+        
+        if submit_button:
+            with st.spinner("Conjuring the Chronicle"):
+                
+                user_message = user_query
+                struct = [{'role' : 'system', 'content' : System_Prompt}]
+                struct.append({"role": "user", "content": user_message})
+                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+                response = chat.choices[0].message.content
+                struct.append({"role": "assistant", "content": response})
+                st.success("Insight generated successfully")
+                st.subheader("Response:")
+                st.write(response)
 
 elif options == "Bestiary":
     st.markdown(apply_background(bg4), unsafe_allow_html=True)
@@ -109,5 +113,3 @@ elif options == "Bestiary":
     response = chat.choices[0].message.content
     struct.append({"role": "assistant", "content": response})
     st.write(response)
-
-
