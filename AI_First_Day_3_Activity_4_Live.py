@@ -61,7 +61,7 @@ if options == "Home":
 elif options == "About Us":
     st.image("images/nathan_pic.jpg")
     st.title("About Nathan")
-    wt.write("Hello, I'm Nathaniel. I'm new to this whole thing. As you can see in the image above, I'm either full of energy or dead.")
+    st.write("Hello, I'm Nathaniel. I'm new to this whole thing. As you can see in the image above, I'm either full of energy or dead.")
 
 elif options == "Model":
     st.title("News Summarizer Tool")
