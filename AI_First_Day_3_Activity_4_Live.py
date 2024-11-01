@@ -59,8 +59,9 @@ if options == "Home":
     st.write("State any news from a credible website and the 'model' tool below will summarize it to avoid wasting time")
 
 elif options == "About Us":
-    #st.image("")
-    st.title("About us")
+    st.image("images/nathan_pic.jpg")
+    st.title("About Nathan")
+    wt.write("Hello, I'm Nathaniel. I'm new to this whole thing. As you can see in the image above, I'm either full of energy or dead.")
 
 elif options == "Model":
     st.title("News Summarizer Tool")
