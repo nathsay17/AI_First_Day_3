@@ -40,7 +40,9 @@ with st.sidebar :
     st.image('images/logo0.png')
     
     api_key_input = st.text_input('Enter OpenAI API token:', type='password')
-    if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
+    
+    # Use the new variable name here:
+    if not (api_key_input.startswith('sk-') and len(api_key_input) == 164):
         st.warning('Please enter your OpenAI API token!', icon='⚠️')
     else:
         st.success('Proceed to entering your prompt message!', icon='👉')
