@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import json
 import base64
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.document_loaders import CSVLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.prompts import ChatPromptTemplate
