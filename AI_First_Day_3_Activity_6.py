@@ -11,7 +11,6 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
-from openai.embeddings_utils import get_embedding
 import faiss
 import streamlit as st
 import warnings
