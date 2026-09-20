@@ -114,12 +114,15 @@ elif options == "Bestiary":
     st.markdown(apply_background(bg4), unsafe_allow_html=True)
     st.title("Bestiary")
 
-    client = openai.OpenAI(api_key=api_key_input)
-    struct = [{'role' : 'system', 'content' : Bestiary_Prompt}]
-    
-    # New v1 syntax
-    chat = client.chat.completions.create(model="gpt-4o-mini", messages=struct)
-    response = chat.choices[0].message.content
-    
-    struct.append({"role": "assistant", "content": response})
-    st.write(response)
+    # Add an if statement to verify the key exists before running OpenAI
+    if not (api_key_input.startswith('sk-') and len(api_key_input) == 164):
+        st.warning("Please enter your OpenAI API token in the sidebar to view the Bestiary.")
+    else:
+        client = openai.OpenAI(api_key=api_key_input)
+        struct = [{'role' : 'system', 'content' : Bestiary_Prompt}]
+        
+        chat = client.chat.completions.create(model="gpt-4o-mini", messages=struct)
+        response = chat.choices[0].message.content
+        
+        struct.append({"role": "assistant", "content": response})
+        st.write(response)
