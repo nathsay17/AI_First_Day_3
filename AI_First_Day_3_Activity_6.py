@@ -40,7 +40,7 @@ with st.sidebar :
     st.image('images/logo1.png')
     st.image('images/logo0.png')
     
-    openai.api_key = st.text_input('Enter OpenAI API token:', type='password')
+    api_key_input = st.text_input('Enter OpenAI API token:', type='password')
     if not (openai.api_key.startswith('sk-') and len(openai.api_key)==164):
         st.warning('Please enter your OpenAI API token!', icon='⚠️')
     else:
@@ -93,12 +93,17 @@ elif options == "Talk to Geralt":
         
         if submit_button:
             with st.spinner("Conjuring the Chronicle"):
+                # Initialize the modern client
+                client = openai.OpenAI(api_key=api_key_input)
                 
                 user_message = user_query
                 struct = [{'role' : 'system', 'content' : System_Prompt}]
                 struct.append({"role": "user", "content": user_message})
-                chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+                
+                # New v1 syntax
+                chat = client.chat.completions.create(model="gpt-4o-mini", messages=struct)
                 response = chat.choices[0].message.content
+                
                 struct.append({"role": "assistant", "content": response})
                 st.success("Insight generated successfully")
                 st.subheader("Response:")
@@ -108,8 +113,12 @@ elif options == "Bestiary":
     st.markdown(apply_background(bg4), unsafe_allow_html=True)
     st.title("Bestiary")
 
+    client = openai.OpenAI(api_key=api_key_input)
     struct = [{'role' : 'system', 'content' : Bestiary_Prompt}]
-    chat = openai.ChatCompletion.create(model="gpt-4o-mini", messages = struct)
+    
+    # New v1 syntax
+    chat = client.chat.completions.create(model="gpt-4o-mini", messages=struct)
     response = chat.choices[0].message.content
+    
     struct.append({"role": "assistant", "content": response})
     st.write(response)
