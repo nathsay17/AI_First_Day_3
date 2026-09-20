@@ -5,10 +5,10 @@ import pandas as pd
 import json
 import base64
 from langchain_openai import ChatOpenAI
-from langchain.document_loaders import CSVLoader
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.prompts import ChatPromptTemplate
-from langchain.vectorstores import Chroma
+from langchain_community.document_loaders import CSVLoader
+from langchain_openai import OpenAIEmbeddings 
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda, RunnablePassthrough
 from openai.embeddings_utils import get_embedding
